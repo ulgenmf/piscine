@@ -6,18 +6,17 @@
 /*   By: fulgen <fulgen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:08:04 by fulgen            #+#    #+#             */
-/*   Updated: 2024/02/08 23:32:20 by fulgen           ###   ########.fr       */
+/*   Updated: 2024/02/08 23:47:08 by fulgen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-			int div;
-			int mod;
-			div = *a / *b;
+	int		div;
+	int		mod;
 
-			mod = *a % *b;
-
-			*a = div;
-			*b = mod;
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
