@@ -3,29 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fulgen <fulgen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jubonill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 16:38:48 by fulgen            #+#    #+#             */
-/*   Updated: 2024/02/09 00:09:08 by fulgen           ###   ########.fr       */
+/*   Created: 2020/10/08 13:28:07 by jubonill          #+#    #+#             */
+/*   Updated: 2020/10/08 14:37:01 by jubonill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_swap(int *arr, int idx, int min)
+{
+	int temp;
+
+	temp = arr[idx];
+	arr[idx] = arr[min];
+	arr[min] = temp;
+}
+
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int		swap;
-	int		count;
+	int				i;
+	int				j;
+	unsigned		min;
 
-	count = 0;
-	while (count < (size - 1))
+	i = 0;
+	while (i < size - 1)
 	{
-		if (tab[count] > tab[count + 1])
+		j = i + 1;
+		min = i;
+		while (j < size)
 		{
-			swap = tab[count];
-			tab[count] = tab[count + 1];
-			tab[count + 1] = swap;
-			count = 0;
+			if (tab[j] < tab[min])
+				min = j;
+			j++;
 		}
-		else
-			count++;
+		if (tab[min] < tab[i])
+			ft_swap(tab, i, min);
+		i++;
 	}
 }

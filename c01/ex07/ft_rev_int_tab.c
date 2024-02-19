@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fulgen <fulgen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jubonill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 15:14:05 by fulgen            #+#    #+#             */
-/*   Updated: 2024/02/09 00:24:32 by fulgen           ###   ########.fr       */
+/*   Created: 2020/10/07 21:23:40 by jubonill          #+#    #+#             */
+/*   Updated: 2020/10/08 17:52:42 by jubonill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int	i;
-	int	temp;
+	int temp;
+	int i;
+	int half;
 
 	i = 0;
-	while (i < size / 2)
+	temp = 0;
+	half = size / 2;
+	while (half-- > 0)
 	{
 		temp = tab[i];
-		tab[i] = tab[size - 1 - i];
-		tab[size - 1 - i] = temp;
+		tab[i++] = tab[size - 1];
+		tab[size-- - 1] = temp;
 	}
 }
